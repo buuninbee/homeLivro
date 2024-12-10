@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Livraria</title>
+  <link rel="stylesheet" href="styleCadastro.css" />
+  <link rel="stylesheet" href="./adm.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><img src="img/baixados.png" alt="" class="imgIcon" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html" id="navLink">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cadastro.html" id="navLink1">Cadastro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="carrinho.html" id="navLink2">Carrinho</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+              id="navdrop" style="align-items: left 50%">
+              Gêneros
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="hq.html">HQ</a></li>
+              <li><a class="dropdown-item" href="manga.html">Manga</a></li>
+              <li>
+                <a class="dropdown-item" href="romance.html">Romance</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="suspense.html">Suspense</a>
+              </li>
+            </ul>
+
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <div class="inputo">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          </div>
+          <div class="butao">
+            <button class="btn btn-outline-success" type="submit" id="butaopesq">
+              <a href="get.html">Search</a>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container d-flex justify-content-center align-items-center area-livro">
+    <div class="card shadow-lg p-4" style="width: 30rem">
+      <h1 class="text-center mb-4">Área de novos livros</h1>
+      <form id="InsertFormPost">
+        <div class="mb-3">
+          <label for="titulo" class="form-label">Titulo</label>
+          <input type="text" id="titulo" class="form-control" placeholder="Digite o titulo" required />
+        </div>
+        <div class="mb-3">
+          <label for="autor" class="form-label">Autor</label>
+          <input type="text" id="autor" class="form-control" placeholder="Digite o autor" required />
+        </div>
+        <div class="mb-3">
+          <label for="genero" class="form-label">Gênero</label>
+          <input type="text" id="genero" class="form-control" placeholder="Digite gênero" required />
+        </div>
+        <div class="mb-3">
+          <label for="descricao" class="form-label">Descrição</label>
+          <input type="text" id="descricao" class="form-control" placeholder="Digite a descrição" required />
+        </div>
+        <div class="mb-3">
+          <label for="descricao" class="form-label">Data de publicação</label>
+          <input type="date" id="data_publicacao" class="form-control" placeholder="Digite a data de publicação"
+            required />
+        </div>
+        <div class="mb-3">
+          <label for="estoque" class="form-label">Quantidade em estoque</label>
+          <input type="text" id="estoque" class="form-control" placeholder="Digite a quantidade" required />
+        </div>
+        <div class="mb-3">
+          <label for="paginas" class="form-label">Número de páginas</label>
+          <input type="text" id="paginas" class="form-control" placeholder="Digite o número de páginas" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100" id="butaoInsert">
+          Inserir
+        </button>
+      </form>
+      <p id="message" class="text-center mt-3"></p>
+    </div>
+  </div>
+
+  <!-- parte de exluir -->
+
+  <div class="opcao">
+    <div class="container d-flex justify-content-center align-items-center" style="margin-top: -4%">
+      <div class="card shadow-lg p-4" style="width: 30rem">
+        <h1 class="text-center mb-4">Excluir livros</h1>
+        <form id="InsertFormDelete">
+          <div class="mb-3">
+            <label for="paginas" class="form-label">Número o id do livro</label>
+            <input type="text" id="idlivro" class="form-control" placeholder="Digite o id do livro" required />
+          </div>
+          <button type="submit" class="btn btn-primary w-100" id="butaoDelet">
+            Deletar
+          </button>
+        </form>
+        <p id="message" class="text-center mt-3"></p>
+      </div>
+    </div>
+
+    <!-- parte de verificar estoque -->
+
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="card shadow-lg p-4" style="width: 30rem">
+        <h1 class="text-center mb-4">Verificar estoque</h1>
+        <form id="InsertFormGet">
+          <button type="submit" class="btn btn-primary w-100" id="butaoGet">
+            Ver estoque
+          </button>
+        </form>
+        <p id="message" class="text-center mt-3"></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="livros">
+  </div>
+
+  <footer id="footer" style="margin-bottom: -50%">
+    <ul class="footer">
+      <li class="info">
+        <h2>Contato</h2>
+        <ul class="ul-sem">
+          <li>
+            <h3>E-mail</h3>
+            <p>Livraria@transformers.com.br</p>
+          </li>
+          <li>
+            <h3>Telefone</h3>
+            <p>(61) 9999-9999</p>
+          </li>
+        </ul>
+      </li>
+      <li class="info-site">
+        <h2>Informações</h2>
+        <div class="">
+          <p>Quem somos</p>
+          <p>Política de privacidade</p>
+          <p>Política de troca</p>
+          <p>Prazos de entrega e procedimentos</p>
+        </div>
+      </li>
+      <li>
+        <h2>Siga-nos em nossas redes sociais!</h2>
+        <div class="info-redes">
+          <img src="./img/facebook-logo.svg" alt="" srcset="" />
+          <img src="./img/instagram-logo.svg" alt="" srcset="" />
+          <img src="./img/inkedin-2.svg" alt="" srcset="" />
+        </div>
+      </li>
+    </ul>
+    <p class="direitos">
+      &copy; 2024 Nossa Livraria. Todos os direitos reservados.
+    </p>
+  </footer>
+
+
+  <script>
+    document.getElementById("InsertFormPost").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const token = localStorage.getItem('authToken');
+
+      if (!token) {
+        alert('Você precisa estar logado para realizar a compra.');
+        return;
+      }
+
+      try {
+        const payloadBase64 = token.split('.')[1];
+        const payload = JSON.parse(atob(payloadBase64)); // Decodifica a parte do payload
+        const idcliente = payload.id; // Substitua 'id' pelo nome correto no token
+
+
+        const titulo = document.getElementById("titulo").value
+        const autor = document.getElementById("autor").value
+        const genero = document.getElementById("genero").value
+        const descricao = document.getElementById("descricao").value
+        const data_publicacao = document.getElementById("data_publicacao").value
+        const estoque = document.getElementById("estoque").value
+        const paginas = document.getElementById("paginas").value
+
+        const regexDate = /^\d{4}-\d{2}-\d{2}$/;
+        if (!regexDate.test(data_publicacao)) {
+          throw new Error('Data de publicação inválida. Use o formato YYYY-MM-DD.');
+        }
+        console.log(genero)
+        console.log(autor)
+        console.log(descricao)
+        console.log(data_publicacao)
+        console.log(estoque)
+        console.log(paginas)
+
+
+
+        // Envia a requisição para a API
+        fetch(`http://localhost:3000/livro`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('authToken')}`,
+          },
+          body: JSON.stringify({
+            titulo,
+            autor,
+            genero,
+            descricao,
+            data_publicacao,
+            estoque,
+            paginas
+          }),
+        }).then(response => response.json())
+          .then(data => {
+            console.log('Livro insirido com sucesso:', data);
+            alert('Livro insirido com sucesso:');
+
+            const pegou = data
+            console.log(pegou)
+
+            const btnInsert = document.getElementById("butaoInsert")
+
+            btnInsert.addEventListener("click", () => {
+              const corpo = document.getElementById("livros")
+              corpo.innerHTML = `
+                <div>
+                    <h2>${pegou.titulo}</h2>
+                    <h3>${pegou.autor}</h3>
+                    <p>${pegou.descricao}</p>
+                    <p>${pegou.genero}</p>
+                    <span>${pegou.data_publicacao}</span>
+                    <p>${pegou.quantidade}</p>
+                    <p>${pegou.numeroPag}</p>
+                </div>`;
+
+              let divCard = document.createElement('div')
+              divCard.appendChild(corpo)
+            })
+          })
+      } catch (error) {
+        console.error('Erro ao decodificar o token:', error);
+        alert('Token inválido. Faça login novamente.');
+      }
+
+    })
+
+    document.getElementById("InsertFormDelete").addEventListener("submit", (e) => {
+      e.preventDefault()
+
+      const id = document.getElementById('idlivro').value;
+
+      try {
+        fetch(`http://localhost:3000/livro/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('authToken')}`, // Adicione se necessário
+          },
+        }).then(res => {
+          res.json();
+          console.log('Recurso deletado com sucesso:', result);
+          alert('Livro deletado com sucesso!');
+        })
+      } catch (error) {
+        console.error('Erro ao deletar o livro:', error);
+        alert('Erro ao deletar o livro. Verifique o console para mais detalhes.');
+      }
+    })
+
+    document.getElementById("InsertFormGet").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      try {
+        fetch("http://localhost:3000/livro", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("authToken")}` // Inclua se necessário
+          }
+        })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Erro na requisição: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(data => {
+            const livrosContainer = document.getElementById("livros");
+
+            if (data.length === 0) {
+              livrosContainer.innerHTML = "<p>Nenhum livro encontrado.</p>";
+              return;
+            }
+
+            data.forEach(livro => {
+              const livroDiv = document.createElement("div");
+              livroDiv.classList.add("livro-card");
+
+              livroDiv.innerHTML = `
+          <div class='card' style='width: 18rem;'>
+            <div class='card-body'>
+              <h5 class='card-title'>Titulo: ${livro.titulo}</h5>
+              <h6 class='card-subtitle mb-2 text-body-secondary'>Autor: ${livro.autor}</h6>
+              <p${livro.descricao} </p>
+              <h3 href='#' class=''>Generô: ${livro.genero}</h3>
+              <h3 href='#' class=''>Paginas: ${livro.paginas}</h3>
+            </div>
+</div>
+        `;
+
+              livrosContainer.appendChild(livroDiv);
+            });
+          })
+          .catch(error => {
+            console.error("Erro ao buscar livros:", error);
+            alert("Erro ao buscar livros. Verifique o console para mais detalhes.");
+          });
+      } catch (error) {
+        console.error("Erro inesperado:", error);
+      }
+    })
+  </script>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</html>

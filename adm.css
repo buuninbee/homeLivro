@@ -1,0 +1,53 @@
+#livros{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    gap: 16px;
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.livro-card{
+    background-color: #f7f7f7;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+
+.livro-card h2{
+    font-size: 44px;
+    font-weight: bold;
+    color: grey;
+}
+
+.autorGenero{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.autorGenero {
+    margin: 0;
+}
+
+.livro-card h3{
+    font-size: 26px;
+    color: #494848;
+    margin: 0;
+    padding: 0;
+}
+
+.livro-card p {
+    font-size: 28px;
+    margin: 0;
+}
+
+.area-livro{
+    padding-top: 80px;
+}
+
+.opcao{
+    display: grid;
+    padding-top: 120px;
+    gap: 40px;
+    justify-items: center;
+}
